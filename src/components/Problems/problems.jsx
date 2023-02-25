@@ -1,50 +1,47 @@
 import React, { useState } from "react";
 import "./problems.css";
 
-function App({ isOpen, setIsSideDrawerOpen }) {
-  const [selectedProblem, setSelectedProblem] = useState("");
+function Problems({ isOpen, setIsSideDrawerOpen }) {
+  const [selectedProblemConstraints, setSelectedProblemConstraints] =
+    useState("");
+  const [selectedProblemComplex, setSelectedProblemComplex] = useState("");
+  const [selectedProblemTC, setSelectedProblemTC] = useState("");
+  const [selectedProblemDesc, setSelectedProblemDesc] = useState("");
   const [selectedProblemName, setSelectedProblemName] = useState("");
   const [isShow, setIsShow] = useState(false);
   // const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(isOpen);
   console.log(isOpen);
 
   const handleClick = (problem) => {
-    setSelectedProblem(problem.description);
+    setSelectedProblemConstraints(problem.constraints);
+    setSelectedProblemComplex(problem.expectedComplexitiy);
+    setSelectedProblemTC(problem.testcase);
+    setSelectedProblemDesc(problem.description);
     setSelectedProblemName(problem.name);
     setIsSideDrawerOpen(false);
   };
 
   const problems = [
     {
-      name: "             Missing number in array",
-      description: `      Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
+      name: "Missing number in array",
+      description: `Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
 
-        Example 1:
-        
-        Input:
-        N = 5
-        A[] = {1,2,3,5}
-        Output: 4
-        Example 2:
-        
-        Input:
-        N = 10
-        A[] = {6,1,2,8,3,4,7,10,5}
-        Output: 9
-        
-        Your Task :
-        You don't need to read input or print anything.
-         Complete the function MissingNumber() that takes array and N as input  
-         parameters and returns the value of the missing number.
-        
-        
-        Expected Time Complexity: O(N)
-        Expected Auxiliary Space: O(1)
-        
-        
-        Constraints:
-        1 ≤ N ≤ 106
-        1 ≤ A[i] ≤ 106`,
+Your Task :You don't need to read input or print anything. Complete the function MissingNumber() that takes array and N as input parameters and returns the value of the missing number.`,
+      testcase: `Test Case:        
+Input:
+N = 5
+A[] = {1,2,3,5}
+Output: 4
+
+Input:
+N = 10
+A[] = {6,1,2,8,3,4,7,10,5}
+Output: 9`,
+      expectedComplexitiy: `Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(1)`,
+      constraints: `Constraints:
+1 ≤ N ≤ 106
+1 ≤ A[i] ≤ 106`,
     },
     {
       name: "                 Stock buy and sell",
@@ -138,14 +135,20 @@ function App({ isOpen, setIsSideDrawerOpen }) {
   ];
 
   return (
-    <div className="App2 bg-neutral-700">
-      <div className={`SideDrawer z-50 bg-purple-300 ${isOpen ? "open" : ""}`}>
-        <button
-          className="CloseButton"
-          onClick={() => setIsSideDrawerOpen(false)}
-        >
-          &#x2715;
-        </button>
+    <div className="flex justify-center content-center">
+      <div
+        className={`fixed top-0 right-0 h-screen SideDrawer z-50 bg-purple-300 ${
+          isOpen ? "open" : ""
+        }`}
+      >
+        <div className="text-right">
+          <div
+            className=" inline cursor-pointer"
+            onClick={() => setIsSideDrawerOpen(false)}
+          >
+            ✖️
+          </div>
+        </div>
         {problems.map((problem) => (
           <button
             className="hover:bg-purple-400"
@@ -159,182 +162,36 @@ function App({ isOpen, setIsSideDrawerOpen }) {
           </button>
         ))}
       </div>
-      {isShow && (
-        <button
-          className="CloseButton bg-neutral-700 text-white "
-          onClick={() => {
-            setIsShow(false);
-          }}
-        >
-          &#x2715;
-        </button>
-      )}
-      <div className="MainContent bg-neutral-700 text-white ">
+
+      <div className="flex overflow-auto bg-neutral-700 text-white">
         {isShow && (
-          <>
-            <pre className="">
-              <div> {selectedProblemName}</div>
-              <div>
-                {" "}
-                {"  "}
-                {selectedProblem}{" "}
+          <div className="p-10">
+            <div
+              className="absolute inline right-10 text-4xl cursor-pointer bg-neutral-700 text-white "
+              onClick={() => {
+                setIsShow(false);
+              }}
+            >
+              &#x2715;
+            </div>
+            <div className="font-mono">
+              <div className="font-bold text-4xl capitalize">{selectedProblemName}</div>
+              <div className="">
+              <br/> 
+              <div>{selectedProblemDesc}</div>
+              <br/> 
+              <pre>{selectedProblemTC}</pre>
+              <br/> 
+              <pre>{selectedProblemConstraints}</pre>
+              <br/> 
+              <pre>{selectedProblemComplex}</pre>
               </div>
-              <br></br>
-              <hr></hr>
-              {"  "}
-            </pre>
-          </>
+            </div>
+          </div>
         )}
       </div>
     </div>
   );
 }
 
-export default App;
-// const App = () => {
-//   const [problems, setProblems] = useState([
-//     { name: 'Problem 1', description: 'Description 1' },
-//     { name: 'Problem 2', description: 'Description 2' },
-//     { name: 'Problem 3', description: 'Description 3' }
-//   ]);
-//   const [selectedProblem, setSelectedProblem] = useState(null);
-//   const [drawerOpen, setDrawerOpen] = useState(false);
-
-//   const handleProblemClick = (problem) => {
-//     setSelectedProblem(problem);
-//     setDrawerOpen(true);
-//   };
-
-//   const handleDrawerClose = () => {
-//     setDrawerOpen(false);
-//   };
-
-//   return (
-//     <div className="App2">
-//       <div className="problems">
-//         <h2>Problems</h2>
-//         <ul>
-//           {problems.map((problem) => (
-//             <li key={problem.name} onClick={() => handleProblemClick(problem)}>
-//               {problem.name}
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//       {drawerOpen && (
-//         <div className="drawer">
-//           <button className="close-btn" onClick={handleDrawerClose}>
-//             X
-//           </button>
-//           <div className="description">
-//             <h2>{selectedProblem.name}</h2>
-//             <p>{selectedProblem.description}</p>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default App;
-
-//working
-// const App = () => {
-//   const [problems, setProblems] = useState([
-//     { name: 'Problem 1', description: 'Description 1' },
-//     { name: 'Problem 2', description: 'Description 2' },
-//     { name: 'Problem 3', description: 'Description 3' }
-//   ]);
-//   const [selectedProblem, setSelectedProblem] = useState(null);
-//   const [drawerOpen, setDrawerOpen] = useState(false);
-
-//   const handleProblemClick = (problem) => {
-//     setSelectedProblem(problem);
-//     setDrawerOpen(true);
-//   };
-
-//   const handleDrawerClose = () => {
-//     setDrawerOpen(false);
-//   };
-
-//   return (
-//     <div className="App">
-//       <div className="problems">
-//         <h2>Problems</h2>
-//         <ul>
-//           {problems.map((problem) => (
-//             <li key={problem.name} onClick={() => handleProblemClick(problem)}>
-//               {problem.name}
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//       {drawerOpen && (
-//         <div className="drawer">
-//           <button className="close-btn" onClick={handleDrawerClose}>
-//             X
-//           </button>
-//           <div className="description">
-//             <h2>{selectedProblem.name}</h2>
-//             <p>{selectedProblem.description}</p>
-//           </div>
-//         </div>
-//       )}
-//       {!drawerOpen && (
-//         <button className="drawer-button" onClick={() => setDrawerOpen(true)}>
-//           Open Drawer
-//         </button>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default App;
-// const Problems = () => {
-//   const [resumeData, setResumeData] = useState({
-//     problems: [
-//       {
-//         name: "problem1",
-//         description: "description1",
-//       },
-//       {
-//         name: "problem2",
-//         description: "description2",
-//       },
-//       {
-//         name: "problem3",
-//         description: "description3",
-//       },
-//     ],
-//   });
-
-//   const [selectedProblem, setSelectedProblem] = useState(null);
-
-//   const handleProblemClick = (index) => {
-//     setSelectedProblem(index);
-//   };
-
-//   const problemItems = resumeData.problems.map((problem, index) => (
-//     <li key={problem.name} onClick={() => handleProblemClick(index)}>
-//       {problem.name}
-//     </li>
-//   ));
-
-//   return (
-//     <div>
-//       <div>
-//         <ul>{problemItems}</ul>
-//       </div>
-//       <div>
-//         {selectedProblem !== null && (
-//           <div>
-//             <h3>{resumeData.problems[selectedProblem].name}</h3>
-//             <p>{resumeData.problems[selectedProblem].description}</p>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Problems;
+export default Problems;

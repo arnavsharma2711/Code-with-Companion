@@ -111,7 +111,7 @@ const Editor = (props) => {
           defaultSize={window.innerWidth * 0.5}
           style={{ position: "static" }}
         >
-          <div cla>
+          <div>
             <div className="bg-zinc-700 p-1">
               <div className="text-white font-mono font-semibold">
                 CODE HERE
@@ -123,7 +123,7 @@ const Editor = (props) => {
               fontSize={fontSize}
               value={props.code}
               onChange={(data) => props.onChangeCode(data)}
-              width={"100vw"}
+              width={"50vw"}
               height={"54.8vh"}
               showGutter={true}
               useWorker={false}

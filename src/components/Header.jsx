@@ -68,6 +68,9 @@ function Header({
   function toggleMenu() {
     setMenuOpen(!menuOpen);
   }
+  function handleClick() {
+    navigator.clipboard.writeText(window.location.href);
+  }
 
   const toggleAudioCss = () => {
     setAudio(!audio);
@@ -85,7 +88,6 @@ function Header({
   };
   const handleProblems = () => {
     //
-    console.log("asdasda");
     setIsSideDrawerOpen(!isSideDrawerOpen);
     setShowBoard(false);
     setshowEditor(true);
@@ -229,6 +231,7 @@ function Header({
             <a
               className="block mt-4 text-lg lg:inline-block lg:mt-0 cursor-pointer text-stone-100 hover:text-white mr-10"
               onClick={() => {
+                handleClick();
                 showNotify("Copied");
               }}
             >
