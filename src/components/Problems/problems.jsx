@@ -44,94 +44,56 @@ Expected Auxiliary Space: O(1)`,
 1 ≤ A[i] ≤ 106`,
     },
     {
-      name: "                 Stock buy and sell",
-      description: `                  The cost of stock on each day is given in an array A[] of size N. Find all the segments of days on which you buy and sell the stock so that in between those days your profit is maximum.
+      name: "Stock buy and sell",
+      description: `The cost of stock on each day is given in an array A[] of size N. Find all the segments of days on which you buy and sell the stock so that in between those days your profit is maximum.
+Note: Since there can be multiple solutions, the driver code will print 1 if your answer is correct, otherwise, it will return 0. In case there's no profit the driver code will print the string "No Profit" for a correct solution.`,
+      testcase: `Test Case:        
+Input:
+N = 7
+A[] = {100,180,260,310,40,535,695}
+Output:
+1
+Explanation:
+One possible solution is (0 3) (4 6) We can buy stock on day 0, and sell it on 3rd day, which will give us maximum profit. Now, we buy stock on day 4 and sell it on day 6.
+Example 2:
 
-        Note: Since there can be multiple solutions, the driver code will print 1 if your answer is correct, otherwise, it will return 0. In case there's no profit the driver code will print the string "No Profit" for a correct solution.
-        
-        Example 1:
-        
-        Input:
-        N = 7
-        A[] = {100,180,260,310,40,535,695}
-        Output:
-        1
-        Explanation:
-        One possible solution is (0 3) (4 6)
-        We can buy stock on day 0,
-        and sell it on 3rd day, which will 
-        give us maximum profit. Now, we buy 
-        stock on day 4 and sell it on day 6.
-        Example 2:
-        
-        Input:
-        N = 5
-        A[] = {4,2,2,2,4}
-        Output:
-        1
-        Explanation:
-        There are multiple possible solutions.
-        one of them is (3 4)
-        We can buy stock on day 3,
-        and sell it on 4th day, which will 
-        give us maximum profit.
-        
-        Your Task:
-        The task is to complete the function stockBuySell() which takes an array A[] and N as input parameters and finds the days of buying and selling stock. The function must return a 2D list of integers containing all the buy-sell pairs i.e. first value of pair will represent the day on which you buy the stock and second value represent the day on which you sell that stock. If there is No Profit, return an empty list.
-        
-        
-        Expected Time Complexity: O(N)
-        Expected Auxiliary Space: O(N)
-        
-        
-        Constraints:
-        2 ≤ N ≤ 106
-        0 ≤ A[i] ≤ 106`,
+Input:
+N = 5
+A[] = {4,2,2,2,4}
+Output:
+1
+Explanation:
+There are multiple possible solutions one of them is (3 4). We can buy stock on day 3, and sell it on 4th day, which will give us maximum profit.`,
+      expectedComplexitiy: `Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(N)`,
+      constraints: `Constraints:
+2 ≤ N ≤ 106
+0 ≤ A[i] ≤ 106`,
     },
     {
-      name: "          Subarray with given sum",
-      description: `                  Given an unsorted array A of size N that contains only non-negative integers, find a continuous sub-array that adds to a given number S and return the left and right index(1-based indexing) of that subarray.
-
-        In case of multiple subarrays, return the subarray indexes which come first on moving from left to right.
+      name: "Subarray with given sum",
+      description: `Given an unsorted array A of size N that contains only non-negative integers, find a continuous sub-array that adds to a given number S and return the left and right index(1-based indexing) of that subarray.
+      In case of multiple subarrays, return the subarray indexes which come first on moving from left to right.
         
-        Note:- You have to return an ArrayList consisting of two elements left and right. In case no such subarray exists return an array consisting of element -1.
-        
-        Example 1:
-        
-        Input:
-        N = 5, S = 12
-        A[] = {1,2,3,7,5}
-        Output: 2 4
-        Explanation: The sum of elements 
-        from 2nd position to 4th position 
-        is 12.
-         
-        
-        Example 2:
-        
-        Input:
-        N = 10, S = 15
-        A[] = {1,2,3,4,5,6,7,8,9,10}
-        Output: 1 5
-        Explanation: The sum of elements 
-        from 1st position to 5th position
-        is 15.
-         
-        
-        Your Task:
-        You don't need to read input or print anything. The task is to complete the function subarraySum() which takes arr, N, and S as input parameters and returns an ArrayList containing the starting and ending positions of the first such occurring subarray from the left where sum equals to S.The two indexes in the array should be according to 1-based indexing. If no such subarray is found, return an array consisting of only one element that is -1.
-        
-         
-        
-        Expected Time Complexity: O(N)
-        Expected Auxiliary Space: O(1)
-        
-         
-        
-        Constraints:
-        1 <= N <= 105
-        1 <= Ai <= 109`,
-    },
+        Note:- You have to return an ArrayList consisting of two elements left and right. In case no such subarray exists return an array consisting of element -1.`,
+      testcase: `Test Case:        
+Input:
+N = 5, S = 12
+A[] = {1,2,3,7,5}
+Output: 2 4
+Explanation: The sum of elements from 2nd position to 4th position is 12.
+  
+Input:
+N = 10, S = 15
+A[] = {1,2,3,4,5,6,7,8,9,10}
+Output: 1 5
+Explanation: The sum of elements from 1st position to 5th positionis 15.`,
+      expectedComplexitiy: `Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(1)`,
+      constraints: `Constraints:
+2 ≤ N ≤ 105
+0 ≤ A[i] ≤ 109`,
+    }
   ];
 
   return (
@@ -176,18 +138,16 @@ Expected Auxiliary Space: O(1)`,
             </div>
             <div className="font-mono">
               <div className="font-bold text-4xl capitalize">{selectedProblemName}</div>
-              <div className="">
-              <br/> 
-              <div>{selectedProblemDesc}</div>
-              <br/> 
-              <pre>{selectedProblemTC}</pre>
-              <br/> 
-              <pre>{selectedProblemConstraints}</pre>
-              <br/> 
-              <pre>{selectedProblemComplex}</pre>
+                <br/> 
+                <div>{selectedProblemDesc}</div>
+                <br/> 
+                <pre>{selectedProblemTC}</pre>
+                <br/> 
+                <pre>{selectedProblemConstraints}</pre>
+                <br/> 
+                <pre>{selectedProblemComplex}</pre>
               </div>
             </div>
-          </div>
         )}
       </div>
     </div>

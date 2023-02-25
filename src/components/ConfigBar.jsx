@@ -20,7 +20,7 @@ const ConfigBar = (props) => {
     } else await save(props.code, "code.txt");
   };
   return (
-    <div className="bg-purple-200 flex justify-between p-2 overflow-auto">
+    <div className="bg-purple-200 flex justify-between p-2">
       <Dropdown
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
         placeholder="Theme"
