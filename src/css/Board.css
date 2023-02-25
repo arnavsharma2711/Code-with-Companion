@@ -1,0 +1,11 @@
+#primary_color {
+  border-radius: 50%;
+}
+
+#primary_color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+#primary_color::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
