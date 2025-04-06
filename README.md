@@ -1,54 +1,79 @@
+# 🤝 Code-with-Companion
 
-# Code-with-Companion
+> **Built with 💻 React.js | 🔌 Socket.io | 🎨 Tailwind CSS**
 
-> Tech Stack Used: React.js, Socket .io, Tailwind.css
+Welcome to **Code-with-Companion** – a collaborative coding platform designed for real-time teamwork! Share a unique link to hop on a **video chat**, code together in a built-in editor, compile in multiple languages, brainstorm on a whiteboard, and even **record the entire session** to revisit later. 🎥💬👨‍💻
 
-A website where users can share a special URL and invite other people to join them for a video chat. The website's built-in code editor also allows users to alter one another's code and compile it in several programming languages that may be saved. Users can also draw out their ideas using a whiteboard and they can record the entire session and store it in your downloads.
-## Deployment
-https://code-with-companion-arnavsharma2711.vercel.app/
+🌐 **Live App**: [code-with-companion.vercel.app](https://code-with-companion-arnavsharma2711.vercel.app/)
 
-## Prerequisite
-* You must have node.js installed in your system.
-* Use the package manager to install applications prerequisite node_modules
+---
+
+## ⚙️ Prerequisites
+
+Before running the app, make sure you have the following ready:
+
+- 🟢 Node.js installed
+- 📦 Required packages installed via:
+
 ```bash
 npm i
 ```
 
-## How to access the project
-Run the following to command to run the app in the development mode.
+---
+
+## 🚀 Getting Started
+
+To run the project locally in development mode:
+
 ```bash
 npm start
 ```
-Open http://localhost:3000 to view it in your browser.
-The page will reload when you make changes.
-You may also see any lint errors in the console.
 
-## Synopsis of the project
-* The website starts by giving you a special URL where you can chat with other users via sharing this URL.
-* Users can video and audio chat with ever user.
-* The website can compile code in 5 different Programming Language (C, C++, Python2.7, Python 3.0, Java). The user can add inputs form the input tab.
-* All code and input changes will be reflected to every user.
-* User can record session and save it in there download. There is also an option of saving code as well.
-* Whiteboard is also there to connect users through visualization.
-* Problem Statement Tab allow users to see a Specific Problem Statement to solve.
+Then open your browser and visit: [http://localhost:3000](http://localhost:3000)
 
-## Screenshots
-* Home Screen: ![Home Screen](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Screen%20Recording.jpeg?raw=true "Home Screen")
-* Whiteboard: ![Whiteboard](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/WhiteBoard.jpeg?raw=true " Whiteboard")
-* Problem Statements: ![Problem Statements](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Problem%20Satements.jpeg?raw=true "Problem Statements")
-* Screen Recorder Output : ![Screen Recorder Output](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Screen%20Recording%20Output.jpeg?raw=true "Screen Recorder Output")
-* User Video and Mic Off:![User Video and Mic Off](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Video%20Off.jpeg?raw=true "User Video and Mic Off")
-## Future Scope of this project
-1. Adding functionally to add user problem statements.
-2. UI Fixes.
-3. Adding ways to authenticate user.
+The app supports hot-reloading 🔁 and will show lint errors in the console if any.
 
-## References
-* React.JS->\
-https://reactjs.org/docs/getting-started.html
-* React Router DOM->\
-https://reactrouter.com/docs/en/v6
-* socket.io->
-https://socket.io/
-* Tailwind->
-https://tailwindcss.com/
+---
+
+## 🧠 Features at a Glance
+
+- 🔗 **Instant Room Sharing**: Get a unique URL to invite friends or teammates.
+- 🎥 **Video & Audio Chat**: Communicate seamlessly while coding together.
+- 👨‍💻 **Real-Time Collaborative Code Editor**: 
+  - Supports 5 languages: `C`, `C++`, `Python 2.7`, `Python 3`, and `Java`
+  - Syncs code and input changes for everyone
+- 🖍️ **Interactive Whiteboard**: Visualize your thoughts and discuss ideas better.
+- 📹 **Session Recorder**: Record your session and download it for later use.
+- 💾 **Save Code Locally**: Keep your work saved with one click.
+- 📝 **Problem Statement Tab**: Focus on solving challenges collaboratively.
+
+---
+
+## 📸 Screenshots
+
+| Feature | Preview |
+|--------|---------|
+| 🏠 Home Screen | ![Home Screen](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Screen%20Recording.jpeg?raw=true) |
+| 🧑‍🏫 Whiteboard | ![Whiteboard](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/WhiteBoard.jpeg?raw=true) |
+| 📑 Problem Statements | ![Problem Statements](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Problem%20Satements.jpeg?raw=true) |
+| 📼 Screen Recording Output | ![Screen Recorder Output](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Screen%20Recording%20Output.jpeg?raw=true) |
+| 🚫 User Video/Mic Off | ![User Video and Mic Off](https://github.com/arnavsharma2711/Code-A-Thon-Programming-Pathshala/blob/main/Screenshots/Video%20Off.jpeg?raw=true) |
+
+---
+
+## 🔮 Future Scope
+
+Here’s what’s coming next:
+
+1. ✍️ Add functionality for users to create and manage custom problem statements.
+2. 🎨 UI/UX improvements for a more polished experience.
+3. 🔐 Implement user authentication for personalized sessions.
+
+---
+
+## 📚 References & Docs
+
+- [React.js Docs](https://reactjs.org/docs/getting-started.html)
+- [React Router DOM](https://reactrouter.com/docs/en/v6)
+- [Socket.io](https://socket.io/)
+- [Tailwind CSS](https://tailwindcss.com/)
